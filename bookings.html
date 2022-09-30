@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+ <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+ <title> Bookings || Doungle</title>
+</head>
+
+<body>
+ <div class="container bookings">
+  <nav>
+   <div class="logo">
+    <a href="index.html">
+     <img src="images/Logo.jpeg" alt="">
+    </a>
+   </div>
+   <ul class="links">
+    <li><a href="index.html">Home</a>
+    </li>
+    <li><a href="bookings.html" class="active">Bookings</a>
+    </li>
+    <li><a href="about.html">About us</a>
+    </li>
+    </li>
+    <li><a href="contact.html">Contact</a>
+    </li>
+  
+   </ul>
+   <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+   </div>
+  </nav>
+  
+  <main>
+   <section class="bookings-sect">
+
+    <form action="">
+     <label for="destination">Select where your sending your Packages</label>
+     <select name="desti" id="destination">
+      <option value="Abuja-Yola">Abuja To Yola</option>
+      <option value="Yola-Abuja">Yola To Abuja</option>
+     </select>
+     <br>
+     <label for="width">Select  package weight </label>
+     <select name="weight" id="weight">
+      <option value="3000">10kg - 20kg N1000</option>
+      <option value="5000">20kg - 30kg N2000</option>
+      <option value="7000">30kg - 40kg N10000</option>
+     </select>
+     <button class="pay">Pay Now</button>
+    </form>
+   </section>
+
+    <section>
+     <div class="checkout">
+      <form action="" id="paymentForm">
+       <label for="first-name">First Name</label>
+       <input type="text" id="first-name" placeholder="John " required>
+    
+       <label for="last-name">Last Name </label>
+       <input type="text" id="last-name" placeholder="Doe" required>
+    
+       <label for="email-address">Email Address</label>
+       <input type="email" id="email-address" placeholder="example@gmail.com" required>
+       <br>
+       <label for="amout">Amount
+       </label>
+        <input type="amount" id="amount" placeholder="N500" required >
+    
+    
+       <label for="submit">
+        <div class="form-submit">
+         <input type="submit" onclick=(payWithPaystack) id="submit" />
+        </div>
+       </label>
+    
+    
+    
+      </form>
+     </div>`
+    
+    </section>
+  </main>
+ </div>
+
+ <script src="main.js"></script>
+</body>
+
+</html>
