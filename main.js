@@ -5,9 +5,9 @@ let divBur = document.querySelectorAll('.burger > div')
 let payBtn = document.querySelector('.pay')
 let destination = document.querySelector('#destination')
 let weight = document.querySelector('#weight')
-let paymentForm = document.querySelector('#submit')
 let bookingSection = document.querySelector('.bookings-sect')
 let checkout = document.querySelector('.checkout')
+let amount = document.querySelector('#amount')
 
 burger.addEventListener('click', e=>{
     //Toggle nav 
@@ -40,31 +40,44 @@ payBtn.addEventListener('click', (e) => {
     e.preventDefault()
     bookingSection.style.display = 'none'
     checkout.style.display = 'block'
-    price = weight.value  
-    console.log(price)
+    amount.value = weight.value
+    amount.style.backgroundColor = 'white'
+    console.log(amount)
 
 
 })
 
-// const paymentForm = document.getElementById('paymentForm'); 
+const paymentForm = document.getElementById('paymentForm'); 
 
 paymentForm.addEventListener("submit", payWithPaystack, false);
    function payWithPaystack(e) {
     e.preventDefault();
-    
+    console.log("Next to paywith")
   let handler = PaystackPop.setup({
-    key: 'pk_test_a780c9434d89a5679ddb7d740fc9fed3ec8bfca9', // Replace with your public key
+    key: 'pk_test_a780c9434d89a5679ddb7d740fc9fed3ec8bfca9', 
     email: document.getElementById("email-address").value,
-    amount: price * 100,
+    amount: weight.value * 100,
     ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-    // label: "Optional string that replaces customer email"
+    label: "Optional",
     onClose: function(){
       alert('Window closed.');
     },
-    callback: function(response){
-      let message = 'Payment complete! Reference: ' + response.reference;
-      alert(message);
-    }
+      callback: function (response) {
+          checkout.style.display = 'none'
+        //   bookingSection.style.display = 'none'
+        bookingSection.style.display = 'block'
+          
+          let message = 'Payment complete! Reference: ' + response.reference;
+          alert(message);
+          checkout.innerHTML = `
+          <div class="success">
+          <h1>Thank you ${label} for Patronizing Doungle</h1>
+          <h3>${message}</h3>
+          
+          </div>
+          `
+      }
+     
   });
 
   handler.openIframe();

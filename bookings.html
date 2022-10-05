@@ -74,16 +74,30 @@
     
     
        <label for="submit">
-        <div class="form-submit">
-         <input type="submit" onclick=(payWithPaystack) id="submit" />
+         <div class="form-submit">
+           <input type="submit" id="submit" />
+          </div>
+        </label>
+    
+        <!-- bookingSection.style.display = 'none'
+        checkout.style.display = 'block'
+        let message = 'Payment complete! Reference: ' + response.reference;
+        bookingSection.innerHTML = `
+        <div class="success">
+          <h1>Thank you ${label} for Patronizing Doungle</h1>
+          <h3>${message}</h3>
+        
         </div>
-       </label>
+        ` -->
     
-    
+        
     
       </form>
      </div>`
+
+     
     
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     </section>
   </main>
  </div>

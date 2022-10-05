@@ -89,7 +89,7 @@ nav{
     line-height: 1.6;
 }
 .home{
-    background: url(/images/hero.jpg);
+    background-image: url(/images/hero.jpg);
     background-size: cover;
 }
 .book{
@@ -202,6 +202,9 @@ select:hover {
 }
 
 .checkout #submit {
+    padding: 1rem 3rem;
+    border: none;
+    cursor: pointer;
     background-color: #23343c;
     color: #fff;
     transition: all 1s linear;
